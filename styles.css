@@ -1,0 +1,63 @@
+body {
+    background-color: #540095;
+    color: white;
+    margin: 0;
+    padding: 0;
+    padding-top: 25vh;
+    font-family: Roboto;
+    font-weight: 700;
+}
+
+.piskvorky {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hraci-plocha {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 300px;
+    width: 300px;
+    margin: 30px auto;
+    border: 2px solid white;
+}
+
+.hraci-plocha .pole {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    font-weight: bold;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.hraci-plocha .pole:hover {
+    background-color: #00b3ff7a;
+}
+
+.piskvorky .hrat-znovu {
+    all: unset;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.hrat-znovu:hover {
+    padding: 10px 40px;
+    background-color: rgb(255, 208, 40);
+    color: black;
+    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.hrat-znovu:active {
+    box-shadow: 0 0 3px #8f8f8f inset;
+    background-color: rgba(255, 208, 40, 0.9);
+}
