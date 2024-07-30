@@ -13,7 +13,7 @@ function HratZnovu() {
     odehraneHry++;
 }
 
-function PolozKostku(event) {
+function PolozKamen(event) {
     let pole = event.target;
     if (pole.innerHTML === '')
     {
