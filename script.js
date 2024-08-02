@@ -24,5 +24,45 @@ function PolozKamen(event) {
         kolo % 2 ? pole.innerHTML = 'X' : pole.innerHTML = 'O';
         kolo++;
     }
+    ZkontrolujVyhru();
+}
+
+function ZkontrolujVyhru3x3() {
+    let vyhra = false;
+    for (let index = 0; index < boxy.length; index++) {
+        if (box.innerHTML !== '')
+        {
+            let znakNaKontrolu = boxy[index].innerHTML;
+            if (index % 3 === 0){ // Radky
+                vyhra = true;
+                for (let j = index+1; j < index+3; j++){
+                    if (boxy[j] !== znakNaKontrolu){
+                        vyhra = false;
+                    }
+                }
+                if (vyhra){
+                    return vyhra;
+                }
+            }
+            if (index / 3 === 0){ // Sloupce
+                vyhra = true;
+                for (let j = 0; j+index < boxy.length; j+=3){
+                    if (boxy[j] !== znakNaKontrolu){
+                        vyhra = false;
+                    }
+                }
+                if (vyhra){
+                    return vyhra;
+                }
+            }
+            if (index === 0){     // LevaDiagonala
+                vyhra = true;
+            }
+            if (index === 2){     // PravaDiagonala
+
+            }
+        }
+    }
+    return vyhra;
 }
 HratZnovu();
