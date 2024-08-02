@@ -21,16 +21,18 @@ function PolozKamen(event) {
     let pole = event.target;
     if (pole.innerHTML === '')
     {
-        kolo % 2 ? pole.innerHTML = 'X' : pole.innerHTML = 'O';
+        (kolo % 2 === 0) ? pole.innerHTML = 'X' : pole.innerHTML = 'O';
         kolo++;
+        if (ZkontrolujVyhru()){
+            (kolo % 2 === 0) ? console.info("O vyhral") : console.info("X vyhral");
+        }
     }
-    ZkontrolujVyhru();
 }
 
 function ZkontrolujVyhru3x3() {
     let vyhra = false;
     for (let index = 0; index < boxy.length; index++) {
-        if (box.innerHTML !== '')
+        if (boxy[index].innerHTML !== '')
         {
             let znakNaKontrolu = boxy[index].innerHTML;
             if (index % 3 === 0){ // Radky
@@ -56,10 +58,14 @@ function ZkontrolujVyhru3x3() {
                 }
             }
             if (index === 0){     // LevaDiagonala
-                vyhra = true;
+                if (boxy[4] === znakNaKontrolu && boxy[8] === znakNaKontrolu){
+                    return true;
+                }
             }
             if (index === 2){     // PravaDiagonala
-
+                if (boxy[4] === znakNaKontrolu && boxy[6] === znakNaKontrolu){
+                    return true;
+                }
             }
         }
     }
