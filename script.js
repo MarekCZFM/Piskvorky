@@ -57,12 +57,12 @@ function ZkontrolujVyhru3x3() {
                     return vyhra;
                 }
             }
-            if (index === 0){     // LevaDiagonala
+            if (index === 0){     // Leva Diagonala
                 if (boxy[4] === znakNaKontrolu && boxy[8] === znakNaKontrolu){
                     return true;
                 }
             }
-            if (index === 2){     // PravaDiagonala
+            if (index === 2){     // Prava Diagonala
                 if (boxy[4] === znakNaKontrolu && boxy[6] === znakNaKontrolu){
                     return true;
                 }
